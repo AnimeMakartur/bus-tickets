@@ -22,4 +22,8 @@ export const citiesArray: City[] = [
       new Station(9, 'Downtown Phoenix', [25, 26, 27]),
       new Station(10, 'Metrocenter Mall', [28, 29, 30])
     ]),
+    new City(6, 'New Orleans', [
+      new Station(11, 'Union Station', [31, 32, 33]),
+      new Station(12, 'Central Station', [34, 35, 36])
+    ])
 ];

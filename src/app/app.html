@@ -1,5 +1,15 @@
   <main>
     <div>
-      <app-search-bar-department></app-search-bar-department>
+      <app-search-bar-department (onCitySelected)="onDepartmentCitySelected($event)">
+      </app-search-bar-department>
+      <app-search-bar-city-arrivale (onCitySelected)="onArrivalCitySelected($event)">
+      </app-search-bar-city-arrivale>
+    </div>
+    <div>
+      <p>Selected Department City: {{ selectedDepartmentCity().join(', ') }}</p>
+    </div>
+    <div>
+      <p>Selected Arrival City: {{ selectedArrivalCity().join(', ') }}</p>
     </div>
   </main>
+  
