@@ -1,6 +1,20 @@
 {
   "name": "bus-tickets",
   "version": "0.0.0",
+  "private": true,
+  "description": "This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.17.",
+  "homepage": "https://github.com/AnimeMakartur/bus-tickets#readme",
+  "bugs": {
+    "url": "https://github.com/AnimeMakartur/bus-tickets/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnimeMakartur/bus-tickets.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "main.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,8 +23,6 @@
     "test": "ng test",
     "serve:ssr:bus-tickets": "node dist/bus-tickets/server/server.mjs"
   },
-  "private": true,
-  "packageManager": "npm@11.11.0",
   "dependencies": {
     "@angular/common": "^21.2.0",
     "@angular/compiler": "^21.2.0",
@@ -34,5 +46,6 @@
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
-  }
+  },
+  "packageManager": "npm@11.11.0"
 }
