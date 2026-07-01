@@ -1,8 +1,6 @@
 import { Component, output } from "@angular/core";
-import { citiesArray } from "../../../../DataBase/CitiesStations";
+import {routesArray} from "../../../../DataBase/RoutesExample";
 import {FormsModule} from "@angular/forms";
-import { City } from "../../../../Models/CityClass";
-
 @Component({
   selector: "app-search-bar-department",
   standalone: true,
@@ -16,9 +14,9 @@ export class SearchBarDepartment {
   onCitySelected= output<string[]>();
   search(city: string) {
     this.findedCities = [];
-    for(const c of citiesArray) {
-      if(c.name.toLowerCase().includes(city.toLowerCase())) {
-        this.findedCities.push(c.name);
+    for(const c of routesArray) {
+      if(c.cityStationDeparture.name.toLowerCase().includes(city.toLowerCase())) {
+        this.findedCities.push(c.cityStationDeparture.name);
       }
     }
     this.onCitySelected.emit(this.findedCities);

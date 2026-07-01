@@ -1,5 +1,5 @@
 import { Component, output } from "@angular/core";
-import { citiesArray } from "../../../../DataBase/CitiesStations";
+import { routesArray } from "../../../../DataBase/RoutesExample";
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -16,9 +16,9 @@ export class SearchBarCityArrivale {
   onCitySelected= output<string[]>();
   search(city: string) {
     this.findedCities = [];
-    for(const c of citiesArray) {
-      if(c.name.toLowerCase().includes(city.toLowerCase())) {
-        this.findedCities.push(c.name);
+    for(const c of routesArray) {
+      if(c.cityStationArrival?.name?.toLowerCase().includes(city.toLowerCase())) {
+        this.findedCities.push(c.cityStationArrival.name);
       }
     }
     this.onCitySelected.emit(this.findedCities);

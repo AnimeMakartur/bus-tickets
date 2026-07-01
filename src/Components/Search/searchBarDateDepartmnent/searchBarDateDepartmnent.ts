@@ -16,7 +16,11 @@ export class SearchBarDateDepartmnent {
     search(date: Date) {
         for(const route of routesArray) {
             const departureDate = route.dateTime.departureTime;
-            if (departureDate.toDateString() === date.toDateString()) {
+            if (
+                departureDate.getFullYear() === date.getFullYear() &&
+                departureDate.getMonth() === date.getMonth() &&
+                departureDate.getDate() === date.getDate()
+            ) {
                 this.findedDates.push(date);
             }
         }

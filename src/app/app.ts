@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { SearchBarDepartment } from '../Components/Search/searchBarCityDepartmnent/searchBarCityDepartmnent';
 import { SearchBarCityArrivale } from '../Components/Search/searchBarCityArrivale/searchBarCityArrivale';
+import {SearchBarDateArrivale} from "../Components/Search/searchBarDateArrivale/searchBarDateArrivale";
+import {SearchBarDateDepartmnent} from "../Components/Search/searchBarDateDepartmnent/searchBarDateDepartmnent";
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
-  imports: [SearchBarDepartment, SearchBarCityArrivale],
+  imports: [SearchBarDepartment, SearchBarCityArrivale, SearchBarDateArrivale, SearchBarDateDepartmnent, FormsModule],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
@@ -18,12 +21,17 @@ export class App {
     this.selectedDepartmentCity.set(city);
   }
   onArrivalCitySelected(city: string[]) {
-    const posibleCities: string[] = [];
-    for (const c of city) {
-      if (!this.selectedDepartmentCity().includes(c)) {
-        posibleCities.push(c);
-      }
-    }
-    this.selectedArrivalCity.set(posibleCities);
+    this.selectedArrivalCity.set(city);
+  }
+
+  selectedDepartmentDate = signal<Date[]>([]);
+  selectedArrivalDate = signal<Date[]>([]);
+
+  onDepartmentDateSelected(dates: Date[]) {
+    this.selectedDepartmentDate.set(dates);
+  }
+
+  onArrivalDateSelected(dates: Date[]) {
+    this.selectedArrivalDate.set(dates);
   }
 }
