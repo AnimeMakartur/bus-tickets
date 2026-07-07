@@ -1,0 +1,27 @@
+  <main>
+    <div>
+      <app-search-bar-department (onCitySelected)="onDepartmentCitySelected($event)">
+      </app-search-bar-department>
+      <app-search-bar-city-arrivale (onCitySelected)="onArrivalCitySelected($event)">
+      </app-search-bar-city-arrivale>
+    </div>
+    <div>
+      <p>Selected Department City: {{ selectedDepartmentCity().join(', ') }}</p>
+    </div>
+    <div>
+      <p>Selected Arrival City: {{ selectedArrivalCity().join(', ') }}</p>
+    </div>
+    <div>
+      <app-search-bar-date-departmnent (onDateSelected)="onDepartmentDateSelected($event)">
+      </app-search-bar-date-departmnent>
+      <app-search-bar-date-arrivale (onDateSelected)="onArrivalDateSelected($event)">
+      </app-search-bar-date-arrivale>
+    </div>
+    <div>
+      <p>Selected Department Date: {{ selectedDepartmentDate().join(', ') }}</p>
+    </div>
+    <div>
+      <p>Selected Arrival Date: {{ selectedArrivalDate().join(', ') }}</p>
+    </div>
+  </main>
+  
